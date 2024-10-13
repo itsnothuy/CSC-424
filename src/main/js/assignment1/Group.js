@@ -2,29 +2,29 @@ class Group {
     #contents;
 
     constructor() {
-        this.#contents = [];
+        this.members = [];
     }
 
-    has(x) {
-        return undefined;
+    has(value) {
+        return this.members.includes(value);
     }
 
-    add(x) {
-        if (!this.has(x)) {
-            undefined;
+    add(value) {
+        if (!this.has(value)) {
+          this.members.push(value);
         }
     }
 
-    delete(x) {
-        this.#contents = undefined;
+    delete(value) {
+        this.members = this.members.filter(member => member !== value);
     }
 
-    static from(it) {
-        let result = new Group();
-        for (let x of it) {
-            undefined;
+    static from(iterable) {
+        let group = new Group();
+        for (let value of iterable) {
+          group.add(value);
         }
-        return result;
+        return group;
     }
 }
 
