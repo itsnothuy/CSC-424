@@ -11,6 +11,9 @@ import scala.annotation.tailrec
     "true" -> TrueValue,
     "false" -> FalseValue,
     "nil" -> NullValue
+    "pi" -> RealValue(math.Pi),
+    "student" -> StrValue("Full Name")
+
   )
 
   /**
